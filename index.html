@@ -255,6 +255,7 @@ button:focus-visible { outline: 3px solid #ffb300; outline-offset: 2px; }
   </div>
 </div>
 
+<script src="https://dragonfly-flash.com/static/devdocs/dragonfly-games.js"></script>
 <script>
 (() => {
 'use strict';
@@ -992,6 +993,11 @@ function frame(now) {
   requestAnimationFrame(frame);
 }
 requestAnimationFrame(frame);
+/* пауза на стрекозе и тд */
+if (window.DragonflyGames) {
+  DragonflyGames.on('pause', pauseGame);
+  DragonflyGames.on('back', pauseGame);
+}
 })();
 </script>
 
